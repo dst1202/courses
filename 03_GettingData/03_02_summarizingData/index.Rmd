@@ -92,7 +92,7 @@ quantile(restData$councilDistrict,probs=c(0.5,0.75,0.9))
 ## Make table
 
 ```{r ,dependson="getData"}
-table(restData$zipCode,useNA="ifany")
+table(restData$zipCode,useNA="ifany") adds a column with NAs, not default behaviour
 ```
 
 ---
