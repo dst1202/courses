@@ -150,7 +150,7 @@ we wanted to match a “.” as a literal period; to do that, we had to “escap
 The * and + signs are metacharacters used to indicate repetition; * means “any number, including none, of the item” and + means “at least one of the item”
 
 ```markdown
-(.*)
+(.*)  ## confusingly matches an pair of brackets with something or nothing in between without escaping the need to escape the brackets
 ```
 
 will match the lines
@@ -169,7 +169,7 @@ hello, 20.m here... ( east area + drives + webcam )
 The * and + signs are metacharacters used to indicate repetition; * means “any number, including none, of the item” and + means “at least one of the item”
 
 ```markdown
-[0-9]+ (.*)[0-9]+
+[0-9]+ (.*)[0-9]+  ## at least one number, space, anything, at least one number
 ```
 
 will match the lines
@@ -188,7 +188,7 @@ Mmmm its time 4 me 2 go 2 bed
 { and } are referred to as interval quantifiers; the let us specify the minimum and maximum number of matches of an expression
 
 ```markdown
-[Bb]ush( +[^ ]+ +){1,5} debate
+[Bb]ush( +[^ ]+ +){1,5} debate ## Bush followed by space, not space, space between 1 & 5 times, followed by debate
 ```
 
 will match the lines
@@ -225,7 +225,7 @@ Keep repeating that Bush smirked and scowled during the debate
 So the expression
 
 ```markdown
-+([a-zA-Z]+) +\1 +
++([a-zA-Z]+) +\1 + ## matches at least one word followed by at leaat one space, followed by the same word \1
 ```
 
 will match the lines
