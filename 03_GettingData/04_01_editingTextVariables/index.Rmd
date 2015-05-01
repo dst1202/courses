@@ -61,7 +61,7 @@ tolower(names(cameraData))
 * Important parameters: _x_, _split_
 
 ```{r splitNames,dependson="getData"}
-splitNames = strsplit(names(cameraData),"\\.")
+splitNames = strsplit(names(cameraData),"\\.") ## escape character
 splitNames[[5]]
 splitNames[[6]]
 ```
@@ -103,6 +103,8 @@ mylist[[1]]
 splitNames[[6]][1]
 firstElement <- function(x){x[1]}
 sapply(splitNames,firstElement)
+
+sapply(splitNames, function(x){tolower(x[1])}) ## does all of the above and puts in lower case
 ```
 
 ---
