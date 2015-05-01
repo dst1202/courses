@@ -194,7 +194,7 @@ will match the lines
 When used at the beginning of a character class, the “\^” is also a metacharacter and indicates matching characters NOT in the indicated class
 
 ```markdown
-[^?.]$
+[^?.]$ ## not a period or question mark at the end of the line
 ```
 
 will match the lines
